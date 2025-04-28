@@ -3,8 +3,8 @@
 -- NOTE: If you are from 42, **you might want to edit these** :)
 --
 -- 42 Global Variables.
-vim.g.user42 = 'SET YOUR USER UP'
-vim.g.mail42 = 'SET YOUR EMAIL UP'
+vim.g.user42 = 'ilyanar'
+vim.g.mail42 = 'ilyanar@student.42lausanne.ch'
 
 require("norminette").setup({
 	runOnSave = true,
