@@ -9,7 +9,10 @@ return {
 			'williamboman/mason.nvim',
 			config = true
 		},
-		'williamboman/mason-lspconfig.nvim',
+		{
+			'williamboman/mason-lspconfig.nvim',
+			tag = "v1.32.0",
+		},
 		{
 			"folke/neodev.nvim",
 			opts = {}

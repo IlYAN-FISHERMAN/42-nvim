@@ -54,6 +54,6 @@ return {
 	--	--
 	-- rust_analyzer = {},
 	-- codelldb = {},
-	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
-	-- ts_ls = {},
+	html = { filetypes = { 'html', 'twig', 'hbs'} },
+	ts_ls = {},
 }

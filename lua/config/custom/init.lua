@@ -1,4 +1,4 @@
---[[ Custom plugin config loader. ]]--
+--[[ Custom plugin config loader. ]] --
 
 -- NOTE: Those 'custom' configurations will *never* be changed upstream. you are safe to change them at will!
 
@@ -10,3 +10,4 @@ local custom = ... .. "."
 
 -- As an example, we will set your default theme here:
 require(custom .. "_themeselect")
+require(custom .. "_conform")

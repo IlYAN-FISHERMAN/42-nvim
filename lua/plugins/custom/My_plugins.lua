@@ -4,4 +4,6 @@ return {
 	'MeanderingProgrammer/render-markdown.nvim',
 	'github/copilot.vim',
 	branch = 'master',
+    "VPavliashvili/json-nvim",
+    ft = "js", -- only load for json filetype
 }
