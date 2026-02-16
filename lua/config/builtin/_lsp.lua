@@ -41,18 +41,18 @@ local on_attach = function(client, bufnr)
 	-- WARN: this little bit here is *only* here to support nvim-navic if you decide to enable it.
 	-- It might very well disappear one day!
 	local status, navic = pcall(require, "nvim-navic")
-		if status then
-			if client.server_capabilities.documentSymbolProvider then
-				navic.attach(client, bufnr)
-			end
-			vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+	if status then
+		if client.server_capabilities.documentSymbolProvider then
+			navic.attach(client, bufnr)
 		end
+		vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+	end
 end
 
 -- Load the user-specified LSP servers.
 local servers = require("config.lsp_servers")
 
-vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	pattern = "*.tpp",
 	callback = function()
 		vim.bo.filetype = "cpp"
@@ -73,13 +73,14 @@ mason_lspconfig.setup {
 
 mason_lspconfig.setup_handlers {
 	function(server_name)
-		require('lspconfig')[server_name].setup {
+		vim.lsp.config(server_name, {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			settings = servers[server_name],
 			filetypes = (servers[server_name] or {}).filetypes,
 			cmd = (servers[server_name] or {}).cmd
-		}
+		})
+		vim.lsp.enable({ server_name })
 	end
 }
 
@@ -96,7 +97,7 @@ vim.diagnostic.config {
 	virtual_text = {
 		source = 'if_many',
 		spacing = 2,
-		prefix = function (diagnostic)
+		prefix = function(diagnostic)
 			if vim.g.have_nerd_font == false then
 				return '▸'
 			end

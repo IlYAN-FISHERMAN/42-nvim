@@ -130,4 +130,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 	pattern = '*',
 })
 
-vim.g.copilot_enabled = false
+-- vim.g.copilot_enabled = false
