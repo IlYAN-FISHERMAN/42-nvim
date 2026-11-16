@@ -11,3 +11,4 @@ local custom = ... .. "."
 -- As an example, we will set your default theme here:
 require(custom .. "_themeselect")
 require(custom .. "_conform")
+require(custom .. "_ocaml")

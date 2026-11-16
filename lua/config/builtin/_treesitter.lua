@@ -2,6 +2,7 @@
 -- See `:help nvim-treesitter`
 
 ---@diagnostic disable: missing-fields
+
 require('nvim-treesitter.config').setup {
 	-- Add languages to be installed here that you want installed for treesitter
 	ensure_installed = require("config.ts_languages"),
@@ -68,6 +69,6 @@ require('nvim-treesitter.config').setup {
 
 vim.filetype.add({
 	extension = {
-		tpp = "hpp",
+		tpp = "hpp", "cpp", "hh", "cc"
 	}
 })

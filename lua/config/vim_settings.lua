@@ -5,7 +5,8 @@
 
 -- Would you like to be notified whenever 42-Nvim has an update available?
 -- NOTE: 42-Nvim will never update without your explicit order!
-vim.g.receiveupdates = true
+-- Désactivé sur atlas : ce dossier vit dans nixos-config, sans dépôt « upstream » à interroger.
+vim.g.receiveupdates = false
 
 -- Would you like 42-Nvim to automatically open binray files with system apps?
 vim.g.smartopen = true
